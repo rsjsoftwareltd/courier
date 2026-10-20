@@ -87,3 +87,5 @@ Copyright RSJ Software Ltd. All rights reserved.
 
 This repository is provided for transparency, release distribution and community support. No licence is granted for reuse,
 modification or redistribution of the source code.
+
+Using Courier is covered by the [Terms of Use](TERMS.md), which the installer also shows.
