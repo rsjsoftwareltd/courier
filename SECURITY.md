@@ -1,47 +1,68 @@
-# Security Policy
+# Security policy -- Courier
+
+RSJ Software Ltd makes Courier. This policy says how to report a security problem, what we do with it, and how
+quickly. How Courier is built and checked, and what has not been done yet, is on the
+[Security and trust](https://courier.rsjsoftware.com/security) page.
+
+## Reporting a problem
+
+Email **security@rsjsoftware.com**, or use **Report a vulnerability** on this repository's Security tab. Please do not
+open a public issue or post about it until it is fixed.
+
+Please include, as far as you can:
+
+- what the problem is and what someone could do with it;
+- how to reproduce it, or a proof of concept;
+- the Courier version (General Settings -> About);
+- any fix or workaround you suggest.
+
+## What happens next
+
+1. We acknowledge your report within **3 working days** (2 for a Critical one).
+2. We confirm whether it is a security problem, and agree its severity with you.
+3. We fix it, aiming for the times below, and tell you before the fix is released.
+4. We publish the fix. Fixes that affect a school's own systems are listed in the release notes. Critical and High
+   problems also get a GitHub security advisory on this repository. With your permission we credit you.
+
+If we cannot meet a target, we tell you why and when we expect to.
+
+## Target times by severity
+
+| Severity | What it means | Fix or workaround released |
+|---|---|---|
+| **Critical** | Someone with no account could take control of the Courier server or the PCs running the RSJ Agent, send or change notices, read the school's data, or get past sign-in. | within **7 days** |
+| **High** | Someone with an account, or a foothold on the network, could do much more than they should: become an administrator, send to people they were not given, read stored passwords or keys, or reach other systems. | within **30 days** |
+| **Medium** | A real problem that is harder to reach or does less harm. | within **90 days** |
+| **Low** | Hardening, or a minor information leak. | in a planned release, or we explain why we will not change it |
+
+These are targets, not contractual promises. RSJ Software is one person; we say this so that you can judge the times,
+not to excuse missing them.
 
 ## Supported versions
 
-Courier is a self-hosted, single-release-line product -- there is no long-term-support branch. Security fixes are made
-against the current release line only. Please always run the latest published release (the version is shown in the console
-under Settings, About) before reporting an issue, in case it is already fixed.
+Courier has one release line. Fixes go into the next release, and we do not patch older versions. Please check you
+are on the latest release before reporting, in case it is already fixed.
 
-## Reporting a vulnerability
+## Scope
 
-If you believe you have found a security vulnerability in Courier (the server application, the Courier module for the RSJ
-Agent, or the installer), please report it privately rather than opening a public GitHub issue or discussing it publicly.
+In scope: the Courier server, the RSJ Agent and its Courier module, the Windows installer and updater, and the
+websites under `rsjsoftware.com`.
 
-**Email: security@rsjsoftware.com**
+Out of scope: the services Courier connects to (for example Active Directory and Windows itself) and a school's own
+network. Please report those to their makers. Also out of scope: denial-of-service testing, social engineering, and
+testing against a school's server without that school's permission.
 
-Please include as much of the following as you can:
+## Safe harbour
 
-- A description of the vulnerability and its potential impact.
-- Steps to reproduce, or a proof of concept.
-- The affected version (Settings, About).
-- Any suggested mitigation, if you have one.
+If you act in good faith, stay within this policy, avoid harming people and data, and give us reasonable time to fix
+the problem before you disclose it, we will not take legal action against you. Look at no more data than you need to
+show the problem, and do not keep it.
 
-### What to expect
+## Disclosure
 
-- We aim to acknowledge your report within **3 working days**.
-- We will keep you informed as we investigate and work on a fix.
-- We ask that you give us a reasonable window to develop and release a fix before any public disclosure, and that you avoid
-  accessing, modifying, or exfiltrating data beyond what is strictly necessary to demonstrate the issue.
-- Good-faith security research conducted under this policy will not result in legal action from us.
+We ask for up to **90 days** from your report, or until a fix is released if that is sooner, before details are made
+public. We are happy to agree a different date with you.
 
-### Scope
+## Bug bounty
 
-In scope: the Courier server application, the Courier module that runs on the RSJ Agent, and the Windows installer. A problem
-you find in the RSJ Agent itself is also welcome at the same address.
-
-Out of scope: third-party services Courier works with (for example Active Directory and Windows itself) and individual
-school infrastructure -- please report those to the relevant vendor.
-
-### Bug bounty
-
-We do not currently operate a paid bug bounty programme. We are genuinely grateful for responsible disclosures and will credit
-reporters (with permission) in release notes where appropriate, but we want to be upfront that there is no monetary reward on
-offer at this time, so there is no unstated expectation either way.
-
----
-
-RSJ Software Ltd -- Courier is a self-hosted school messaging product. Notices stay on the school's own server.
+There is no paid bug bounty. We are grateful for every report and will credit you if you would like that.
